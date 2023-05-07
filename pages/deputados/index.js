@@ -13,7 +13,7 @@ const index = (props) => {
                         <Col>
                             <Link href={'/deputados/' + item.id}>
                                 <Card>
-                                    <Card.Img variant="top" src={item.urlFoto} />
+                                    <Card.Img variant="top" src={item.urlFoto} />                                    
                                 </Card>
                             </Link>
                         </Col>

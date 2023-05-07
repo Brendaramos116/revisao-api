@@ -7,16 +7,22 @@ import { Card, Col, Row, Table } from 'react-bootstrap'
 const Deputados = ({ deputados, despesas, profissao }) => {
     return (
         <>
-            <Pagina>
+            <Pagina titulo={deputados.ultimoStatus.nome}> 
                 <Row>                    
                         <Col mb={3}>
+                            <Card>
                             <Card.Img variant='top' src={deputados.ultimoStatus.urlFoto} />
-                            <p><strong>{deputados.ultimoStatus.nome}</strong></p>
-                            <p><strong>Partido:</strong>{deputados.ultimoStatus.siglaPartido}</p>
-                            <p><strong>UF Partido:</strong>{deputados.ultimoStatus.siglaUf}</p>
+                            <Card.Body>
+                            <Card.Title className='text-center'><p><strong>{deputados.nomeCivil}</strong></p></Card.Title>
+                            <p><strong>Partido:</strong> {deputados.ultimoStatus.siglaPartido}</p>
+                            <p><strong>UF Partido:</strong> {deputados.ultimoStatus.siglaUf}</p>
+                            <p><strong>Condição Eleitoral:</strong> {deputados.ultimoStatus.condicaoEleitoral}</p>
                             <Link href={'/deputados/'} className='btn btn-danger'>Voltar</Link>
+                            </Card.Body>
+                            </Card>
                         </Col>                    
                     <Col>
+                        <h1>Despesas</h1>
                         <Table striped bordered hover>
                             <thead>                                
                                 <tr>
